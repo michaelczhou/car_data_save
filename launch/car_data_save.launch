@@ -1,0 +1,11 @@
+﻿<launch>
+    <arg name="points_topic" default="/velodyne_points" />
+    <arg name="omni_topic" default="/ros_indigosdk_node/stitched_image0" />
+    <arg name="bum_topic" default="/camera/left/image_color" />
+
+    <node pkg="car_data_save" type="car_data_save" name="car_data_save" output="screen">
+            <param name="points_topic" value="$(arg points_topic)" />
+            <param name="omni_topic" value="$(arg omni_topic)" />
+            <param name="bum_topic" value="$(arg bum_topic)" />
+    </node>
+</launch>
